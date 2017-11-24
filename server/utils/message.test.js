@@ -18,11 +18,11 @@ describe('generateLocationMessage', () => {
     var from  = 'Jen';
     var latitude = 123;
     var longitude = 456;
-    var url = 'https://www.google.com/maps?q=123,456';
+    var url = 'https://www.google.com/maps?=123,456';
     var message = generateLocationMessage(from, latitude, longitude);
     expect(typeof message.createdAt).toEqual('number');
     expect(message).toMatchObject({from,url});
-    expect(message.url).toBe('https://www.google.com/maps?q=123,456');
+    expect(message.url).toBe( url);
 
   });
 });
